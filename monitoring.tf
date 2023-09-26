@@ -19,6 +19,7 @@ resource "aws_instance" "prometheus" {
   ami           = "ami-0ccea833bf267252a"
   instance_type = "t2.small"
   count         = "1"
+  key_name      = "monitoring"
   tags = {
     Name = "prometheus"
   }
@@ -34,6 +35,7 @@ resource "aws_instance" "grafana" {
   ami           = "ami-0ccea833bf267252a"
   instance_type = "t2.small"
   count         = "1"
+  key_name      = "monitoring"
   tags = {
     Name = "grafana"
   }
